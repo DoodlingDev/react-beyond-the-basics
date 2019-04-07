@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import TooterIcon from './TooterIcon';
-import NewStatus from './NewStatus';
-import TootFeed from './TootFeed';
+import React, { Component } from "react";
+import TootHeader from "./TootHeader";
+import NewToot from "./NewToot";
+import TootFeed from "./TootFeed";
 
-import './App.css';
+import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <div className="App">
-        <TooterIcon />
-        <h1>Tooter!</h1>
+        <TootHeader />
 
-        <NewStatus />
+        <NewToot />
         <TootFeed />
       </div>
     );

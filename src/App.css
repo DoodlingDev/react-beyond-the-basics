@@ -24,12 +24,12 @@ button {
   padding: 1rem;
 }
 
-.new-status__form {
+.new-toot__form {
   display: flex;
   flex-direction: row;
 }
 
-.new-status__input {
+.new-toot__input {
   font-size: 1rem;
   padding: 1rem;
   border-radius: 3px;
@@ -38,9 +38,8 @@ button {
 
 }
 
-.new-status__button {
+.new-toot__button {
   margin-left: 1rem;
-
 }
 
 .toot-feed {
