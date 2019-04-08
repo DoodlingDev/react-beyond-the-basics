@@ -8,7 +8,21 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      toots: []
+    };
+  }
+
+  handleSubmit = newToot => {
+    this.setState(oldState => {
+      const newState = {...oldState};
+      newState.toots.push({
+        toot: newToot,
+        timestamp: Date.now(),
+      });
+
+      return newState;
+    });
   }
 
   render() {
@@ -16,8 +30,12 @@ class App extends Component {
       <div className="App">
         <TootHeader />
 
-        <NewToot />
-        <TootFeed />
+        <NewToot
+          handleSubmit={this.handleSubmit}
+        />
+        <TootFeed
+          tootData={this.state.toots}
+        />
       </div>
     );
   }

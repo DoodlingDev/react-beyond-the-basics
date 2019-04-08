@@ -1,13 +1,31 @@
 import React from "react";
+import NoToots from "./NoToots";
 
-export default function TootFeed() {
+export default function TootFeed({ tootData }) {
+  function reverse(array) {
+    let newArray = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+      newArray.push(array[i]);
+    }
+    return newArray;
+  }
+
   return (
     <ul className="toot-feed">
-      <li className="toot-feed__toot">Test toot one</li>
-
-      <li className="toot-feed__toot">Test toot two</li>
-
-      <li className="toot-feed__toot">Test toot three</li>
+      {tootData.length < 1 ? (
+        <NoToots />
+      ) : (
+        reverse(tootData).map(toot => {
+          return (
+            <li
+              key={`${toot.toot}-${toot.timestamp}`}
+              className="toot-feed__toot"
+            >
+              {toot.toot}
+            </li>
+          );
+        })
+      )}
     </ul>
   );
 }
