@@ -9,6 +9,12 @@ export default class NewToot extends Component {
     };
   }
 
+  updateInput = event => {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+
   render() {
     return (
       <div className="new-toot__form">
