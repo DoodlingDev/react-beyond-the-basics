@@ -20,6 +20,7 @@ export default class NewToot extends Component {
       <div className="new-toot__form">
         <NewTootInput
           handleChange={this.updateInput}
+          tootValue={this.state.inputValue}
         />
 
         <button className="new-toot__button">Toot</button>
