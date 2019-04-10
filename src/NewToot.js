@@ -18,7 +18,9 @@ export default class NewToot extends Component {
   render() {
     return (
       <div className="new-toot__form">
-        <NewTootInput />
+        <NewTootInput
+          handleChange={this.updateInput}
+        />
 
         <button className="new-toot__button">Toot</button>
       </div>
